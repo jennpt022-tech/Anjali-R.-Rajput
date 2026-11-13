@@ -38,7 +38,7 @@ export default function App() {
   });
 
   const [projects, setProjects] = useState<ProjectItem[]>(() => {
-    const saved = localStorage.getItem('anjali_portfolio_projects_v3');
+    const saved = localStorage.getItem('anjali_portfolio_projects_v4');
     if (saved) {
       try {
         const parsed: ProjectItem[] = JSON.parse(saved);
@@ -72,7 +72,7 @@ export default function App() {
   }, [academics]);
 
   useEffect(() => {
-    localStorage.setItem('anjali_portfolio_projects_v3', JSON.stringify(projects));
+    localStorage.setItem('anjali_portfolio_projects_v4', JSON.stringify(projects));
   }, [projects]);
 
   const handleUpdatePortrait = (url: string) => {

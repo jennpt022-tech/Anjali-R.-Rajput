@@ -1,4 +1,6 @@
 import { AcademicItem, AchievementItem, PortfolioProfile, ProjectItem } from '../types/portfolio';
+import musewaveCoverImg from '../assets/images/musewave_music_hub_1794474147066.jpg';
+import bombayCanteenCoverImg from '../assets/images/bombay_canteen_case_1794474147392.jpg';
 
 export const initialProfile: PortfolioProfile = {
   name: "Anjali Rajput",
@@ -151,7 +153,7 @@ export const initialProjects: ProjectItem[] = [
     ],
     outcome: "Successfully achieved fast indexation on search engines with zero crawl errors, live audio preview integration, and clean responsive web performance.",
     tags: ["Technical SEO", "Keyword Strategy", "Vercel Deployment", "On-Page SEO", "Metadata Architecture"],
-    imageUrl: "/src/assets/images/musewave_music_hub_1794474147066.jpg",
+    imageUrl: musewaveCoverImg,
     pdfUrl: "/assets/aistudio/SEO_Assignment_20261112_145143_0000_679bd167.pdf",
     pdfTitle: "Muse Wave SEO Assignment Deck (SYBBA-B Roll No. 163)",
     demoUrl: "https://muse-wave-9ams-psi.vercel.app",
@@ -348,7 +350,7 @@ export const initialProjects: ProjectItem[] = [
     ],
     outcome: "Presented actionable qualitative insights into hospitality brand building; selected as benchmark case study for peer masterclasses.",
     tags: ["Market Research", "Brand Analysis", "Website UX", "Executive Interviews", "Social Storytelling"],
-    imageUrl: "/src/assets/images/bombay_canteen_case_1794474147392.jpg",
+    imageUrl: bombayCanteenCoverImg,
     featured: true
   }
 ];
