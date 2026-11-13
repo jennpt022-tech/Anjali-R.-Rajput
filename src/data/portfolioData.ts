@@ -106,11 +106,11 @@ export const initialAcademics: AcademicItem[] = [
         sem: "Semester 3",
         status: "in-progress",
         subjects: [
-          "Performance Marketing & Paid Acquisition",
-          "E-Commerce Systems & Omnichannel Retail",
-          "Data Analytics & AI-Assisted Workflows",
-          "Strategic Brand Management",
-          "Legal Aspects of Digital Business"
+          "Fundamentals of Search Engine Optimization",
+          "Social Media Advertising 1",
+          "Operations Management",
+          "Social Psychology",
+          "Financial Accounting"
         ],
         cgpa: "Ongoing",
         grade: "In Progress"

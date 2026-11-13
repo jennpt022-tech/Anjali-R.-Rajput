@@ -382,11 +382,11 @@ export default function Academics({ academics }: AcademicsProps) {
                         Currently Pursuing
                       </div>
                       <div className="text-xs font-semibold text-[#1652F0] mt-0.5">
-                        Term Active · Expected Completion Early 2026
+                        Term Active
                       </div>
                     </div>
                     <p className="text-[11px] text-gray-500 leading-normal">
-                      Focusing on quantitative growth modeling, paid media channels, and advanced data-driven brand architectures.
+                      Focusing on SEO fundamentals, social media advertising, operations management, social psychology, and financial accounting.
                     </p>
                   </div>
                 </div>

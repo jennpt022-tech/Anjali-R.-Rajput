@@ -26,7 +26,7 @@ export default function App() {
   });
 
   const [academics, setAcademics] = useState<AcademicItem[]>(() => {
-    const saved = localStorage.getItem('anjali_portfolio_academics_v6');
+    const saved = localStorage.getItem('anjali_portfolio_academics_v7');
     if (saved) {
       try {
         return JSON.parse(saved);
@@ -67,7 +67,7 @@ export default function App() {
   }, [profile]);
 
   useEffect(() => {
-    localStorage.setItem('anjali_portfolio_academics_v6', JSON.stringify(academics));
+    localStorage.setItem('anjali_portfolio_academics_v7', JSON.stringify(academics));
   }, [academics]);
 
   useEffect(() => {
