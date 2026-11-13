@@ -37,7 +37,7 @@ export default function Achievements({ achievements, onSelectAchievement }: Achi
               Key Honours &amp; Campus Impact
             </h2>
             <p className="text-base text-gray-600 max-w-2xl">
-              Demonstrated leadership spanning academic excellence, student mentorship, inter-college competition, and large-scale creative event operations.
+              Recognized across academic excellence, student mentorship, and inter-collegiate brand communication competitions.
             </p>
           </div>
 
@@ -47,8 +47,8 @@ export default function Achievements({ achievements, onSelectAchievement }: Achi
           </div>
         </div>
 
-        {/* Clean 2x2 Grid with Royal Blue Icon Badges */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Clean 3-Column Grid with Royal Blue Icon Badges */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {achievements.map((item) => (
             <div
               key={item.id}

@@ -1,19 +1,17 @@
 import { useState } from 'react';
-import { Briefcase, ArrowUpRight, CheckCircle, Search, FileText, Download, ExternalLink, UserCheck, PlusCircle } from 'lucide-react';
+import { Briefcase, ArrowUpRight, Search, FileText, Download, ExternalLink, UserCheck } from 'lucide-react';
 import { ProjectItem } from '../types/portfolio';
 
 interface ProjectsProps {
   projects: ProjectItem[];
   onSelectProject: (project: ProjectItem) => void;
   onOpenPdfViewer: (project: ProjectItem) => void;
-  onOpenAddProjectModal: () => void;
 }
 
 export default function Projects({
   projects,
   onSelectProject,
-  onOpenPdfViewer,
-  onOpenAddProjectModal
+  onOpenPdfViewer
 }: ProjectsProps) {
   const [activeCategory, setActiveCategory] = useState<string>('All');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -48,16 +46,6 @@ export default function Projects({
             <p className="text-base text-gray-600 max-w-2xl">
               Complete academic presentations, live deployed hubs, and strategic decks prepared by Anjali Rajput at K.P.B. Hinduja College of Commerce.
             </p>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <button
-              onClick={onOpenAddProjectModal}
-              className="inline-flex items-center gap-2 px-4 py-2 text-xs font-bold rounded-full bg-[#1652F0] text-white hover:bg-[#1242c7] transition-all shadow-xs cursor-pointer"
-            >
-              <PlusCircle className="w-3.5 h-3.5" />
-              <span>Add Custom Project</span>
-            </button>
           </div>
         </div>
 
@@ -245,28 +233,6 @@ export default function Projects({
               </div>
             </div>
           ))}
-
-          {/* Add Project Card */}
-          <div
-            onClick={onOpenAddProjectModal}
-            className="bg-gray-50/70 border-2 border-dashed border-gray-300 hover:border-[#1652F0] rounded-2xl p-8 flex flex-col items-center justify-center text-center space-y-4 cursor-pointer group transition-all min-h-[380px]"
-          >
-            <div className="w-14 h-14 rounded-2xl bg-white border border-gray-200 flex items-center justify-center text-gray-400 group-hover:text-[#1652F0] group-hover:scale-110 group-hover:border-[#1652F0] transition-all shadow-xs">
-              <PlusCircle className="w-7 h-7" />
-            </div>
-            <div className="space-y-1">
-              <h4 className="text-base font-bold text-gray-900 group-hover:text-[#1652F0] transition-colors">
-                Add Another Project / Case Study
-              </h4>
-              <p className="text-xs text-gray-500 max-w-xs">
-                Add future assignments, live client campaigns, or competition decks to your portfolio anytime.
-              </p>
-            </div>
-            <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#1652F0] bg-blue-50 px-3 py-1.5 rounded-full group-hover:bg-[#1652F0] group-hover:text-white transition-colors">
-              + Insert New Project Card
-            </span>
-          </div>
-
         </div>
 
       </div>

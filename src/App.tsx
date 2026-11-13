@@ -14,7 +14,7 @@ import { AcademicItem, AchievementItem, PortfolioProfile, ProjectItem } from './
 
 export default function App() {
   const [profile, setProfile] = useState<PortfolioProfile>(() => {
-    const saved = localStorage.getItem('anjali_portfolio_profile_v3');
+    const saved = localStorage.getItem('anjali_portfolio_profile_v4');
     if (saved) {
       try {
         return { ...initialProfile, ...JSON.parse(saved) };
@@ -37,7 +37,7 @@ export default function App() {
     return initialAcademics;
   });
 
-  const [projects, setProjects] = useState<ProjectItem[]>(() => {
+  const [projects] = useState<ProjectItem[]>(() => {
     const saved = localStorage.getItem('anjali_portfolio_projects_v4');
     if (saved) {
       try {
@@ -60,11 +60,10 @@ export default function App() {
   const [isCvPdfOpen, setIsCvPdfOpen] = useState(false);
   const [selectedAchievement, setSelectedAchievement] = useState<AchievementItem | null>(null);
   const [isEditModalOpen, setIsEditModalOpen] = useState(false);
-  const [editModalMode, setEditModalMode] = useState<'profile' | 'addProject'>('profile');
 
   // Persistence
   useEffect(() => {
-    localStorage.setItem('anjali_portfolio_profile_v3', JSON.stringify(profile));
+    localStorage.setItem('anjali_portfolio_profile_v4', JSON.stringify(profile));
   }, [profile]);
 
   useEffect(() => {
@@ -82,10 +81,6 @@ export default function App() {
   const handleSaveProfile = (newProfile: PortfolioProfile, newAcademics: AcademicItem[]) => {
     setProfile(newProfile);
     setAcademics(newAcademics);
-  };
-
-  const handleAddNewProject = (project: ProjectItem) => {
-    setProjects((prev) => [project, ...prev]);
   };
 
   const scrollToConnect = () => {
@@ -129,10 +124,6 @@ export default function App() {
         {/* Section 2: Academics */}
         <Academics
           academics={academics}
-          onOpenEditModal={() => {
-            setEditModalMode('profile');
-            setIsEditModalOpen(true);
-          }}
         />
 
         {/* Section 3: Projects */}
@@ -142,10 +133,6 @@ export default function App() {
           onOpenPdfViewer={(proj) => {
             setIsCvPdfOpen(false);
             setActivePdfProject(proj);
-          }}
-          onOpenAddProjectModal={() => {
-            setEditModalMode('addProject');
-            setIsEditModalOpen(true);
           }}
         />
 
@@ -160,10 +147,7 @@ export default function App() {
       <ConnectFooter
         profile={profile}
         onOpenCvPdf={openCvPdf}
-        onEditProfile={() => {
-          setEditModalMode('profile');
-          setIsEditModalOpen(true);
-        }}
+        onEditProfile={() => setIsEditModalOpen(true)}
       />
 
       {/* Deep-Dive Case Study Modal */}
@@ -192,15 +176,13 @@ export default function App() {
         onClose={() => setSelectedAchievement(null)}
       />
 
-      {/* Edit Profile & Academics Modal */}
+      {/* Edit Contact & Links Modal */}
       <EditProfileModal
         isOpen={isEditModalOpen}
         onClose={() => setIsEditModalOpen(false)}
         profile={profile}
         academics={academics}
         onSaveProfile={handleSaveProfile}
-        onAddNewProject={handleAddNewProject}
-        mode={editModalMode}
       />
     </div>
   );

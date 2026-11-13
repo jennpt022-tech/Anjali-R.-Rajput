@@ -1,5 +1,4 @@
-import React, { useState } from 'react';
-import { Copy, Check, FileText, Download, ArrowUp, ExternalLink, Sparkles, Phone, MapPin } from 'lucide-react';
+import { FileText, Download, ArrowUp, ExternalLink, Sparkles, MapPin } from 'lucide-react';
 import { PortfolioProfile } from '../types/portfolio';
 
 interface ConnectFooterProps {
@@ -9,15 +8,6 @@ interface ConnectFooterProps {
 }
 
 export default function ConnectFooter({ profile, onOpenCvPdf, onEditProfile }: ConnectFooterProps) {
-  const [copied, setCopied] = useState(false);
-
-  const handleCopyEmail = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    navigator.clipboard.writeText(profile.email);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2500);
-  };
-
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -49,7 +39,7 @@ export default function ConnectFooter({ profile, onOpenCvPdf, onEditProfile }: C
               </p>
             </div>
 
-            {/* TWO PROMINENT INTERACTIVE ICON BUTTONS FOR LINKEDIN AND GMAIL */}
+            {/* TWO PROMINENT INTERACTIVE REDIRECT BUTTONS FOR LINKEDIN AND GMAIL */}
             <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-5">
               
               {/* 1. LinkedIn Icon Button */}
@@ -71,56 +61,30 @@ export default function ConnectFooter({ profile, onOpenCvPdf, onEditProfile }: C
                 <ExternalLink className="w-4 h-4 opacity-80 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
               </a>
 
-              {/* 2. Gmail Icon Button + One-Click Copy Email Utility */}
-              <div className="w-full sm:w-auto inline-flex items-center justify-between sm:justify-center rounded-full bg-white border-2 border-gray-900 shadow-xs hover:border-[#1652F0] transition-colors p-1.5 group">
-                <a
-                  href={`mailto:${profile.email}`}
-                  className="inline-flex items-center gap-2.5 px-5 py-2.5 text-sm font-bold text-gray-900 hover:text-[#1652F0] transition-colors whitespace-nowrap"
+              {/* 2. Gmail Redirect Button (no email text displayed) */}
+              <a
+                href={`mailto:${profile.email}`}
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-3 px-7 py-4 rounded-full bg-white border-2 border-gray-900 text-gray-900 font-bold text-sm shadow-xs hover:border-[#1652F0] hover:text-[#1652F0] active:scale-98 transition-all cursor-pointer group"
+              >
+                {/* Gmail SVG Icon */}
+                <svg
+                  className="w-5 h-5 shrink-0"
+                  viewBox="0 0 24 24"
+                  aria-hidden="true"
                 >
-                  {/* Gmail / Envelope M Icon */}
-                  <svg
-                    className="w-5 h-5 shrink-0"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fill="#EA4335"
-                      d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
-                    />
-                  </svg>
-                  <span>Gmail</span>
-                </a>
-
-                <button
-                  onClick={handleCopyEmail}
-                  title="Copy email address"
-                  className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full bg-gray-100 hover:bg-[#1652F0] hover:text-white text-gray-800 text-xs font-semibold transition-all cursor-pointer whitespace-nowrap"
-                >
-                  {copied ? (
-                    <>
-                      <Check className="w-3.5 h-3.5 text-emerald-600 group-hover:text-white" />
-                      <span className="text-emerald-700 group-hover:text-white">Copied!</span>
-                    </>
-                  ) : (
-                    <>
-                      <Copy className="w-3.5 h-3.5" />
-                      <span>Copy Email</span>
-                    </>
-                  )}
-                </button>
-              </div>
+                  <path
+                    fill="#EA4335"
+                    d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-2.023 2.309-3.178 3.927-1.964L5.455 4.64 12 9.548l6.545-4.91 1.528-1.145C21.69 2.28 24 3.434 24 5.457z"
+                  />
+                </svg>
+                <span>Gmail</span>
+                <ExternalLink className="w-4 h-4 opacity-70 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
+              </a>
 
             </div>
 
-            {/* Direct Contact Metadata & CV Actions */}
+            {/* Location Metadata */}
             <div className="pt-4 border-t border-gray-100 flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-xs text-gray-600 font-medium">
-              <span className="font-mono bg-gray-50 px-3 py-1.5 rounded-lg border border-gray-200 text-gray-800">
-                {profile.email}
-              </span>
-              <span className="inline-flex items-center gap-1.5 text-gray-700">
-                <Phone className="w-3.5 h-3.5 text-[#1652F0]" />
-                {profile.phone}
-              </span>
               <span className="inline-flex items-center gap-1.5 text-gray-700">
                 <MapPin className="w-3.5 h-3.5 text-[#1652F0]" />
                 {profile.location}

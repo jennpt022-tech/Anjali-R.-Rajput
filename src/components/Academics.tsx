@@ -1,13 +1,12 @@
 import { useState } from 'react';
-import { GraduationCap, Calendar, Award, BookOpen, ChevronDown, ChevronUp, Clock, CheckCircle2, Edit3 } from 'lucide-react';
+import { GraduationCap, Calendar, Award, BookOpen, ChevronDown, ChevronUp, Clock, CheckCircle2 } from 'lucide-react';
 import { AcademicItem } from '../types/portfolio';
 
 interface AcademicsProps {
   academics: AcademicItem[];
-  onOpenEditModal: () => void;
 }
 
-export default function Academics({ academics, onOpenEditModal }: AcademicsProps) {
+export default function Academics({ academics }: AcademicsProps) {
   const [selectedSemTab, setSelectedSemTab] = useState<'sem1' | 'sem2' | 'sem3'>('sem2');
   const [isSemExpanded, setIsSemExpanded] = useState(true);
 
@@ -32,16 +31,6 @@ export default function Academics({ academics, onOpenEditModal }: AcademicsProps
             <p className="text-base text-gray-600 max-w-2xl">
               Consistent distinction across secondary, higher secondary, and undergraduate digital business studies in Mumbai.
             </p>
-          </div>
-
-          <div className="flex items-center gap-3">
-            <button
-              onClick={onOpenEditModal}
-              className="inline-flex items-center gap-1.5 px-4 py-2 text-xs font-semibold rounded-lg bg-white border border-gray-300 text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-colors shadow-xs cursor-pointer"
-            >
-              <Edit3 className="w-3.5 h-3.5 text-[#1652F0]" />
-              <span>Customize Grades &amp; Names</span>
-            </button>
           </div>
         </div>
 

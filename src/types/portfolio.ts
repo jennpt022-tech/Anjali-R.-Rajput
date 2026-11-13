@@ -56,7 +56,6 @@ export interface PortfolioProfile {
   bioLines: string[];
   cgpa: string;
   email: string;
-  phone: string;
   location: string;
   linkedinUrl: string;
   portraitUrl: string;

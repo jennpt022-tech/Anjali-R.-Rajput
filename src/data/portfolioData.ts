@@ -13,7 +13,6 @@ export const initialProfile: PortfolioProfile = {
   ],
   cgpa: "9.09",
   email: "anjaliranjitrajput2007@gmail.com",
-  phone: "+91 8446426120",
   location: "Kalyan, Maharashtra · Mumbai",
   linkedinUrl: "https://www.linkedin.com/in/anjali-rajput-6550212a4",
   portraitUrl: "/assets/aistudio/file_0000000006087209aa239b699ec957b9_f95b059a.png",
@@ -382,14 +381,5 @@ export const initialAchievements: AchievementItem[] = [
     description: "Selected to lead an interactive masterclass sharing field research methodologies and digital brand storytelling insights drawn from primary interviews with The Bombay Canteen's marketing team.",
     dateOrYear: "2025–2026",
     iconType: "speaker"
-  },
-  {
-    id: "campaign-leadership",
-    title: "Student Volunteer & Management Assistant",
-    badgeCategory: "Campus Leadership",
-    highlight: "Coordinated logistics, scheduling & live execution for major events",
-    description: "Coordinated logistics, scheduling, and live operational execution for major inter-collegiate events and academic competitions, alongside student initiatives including Shutter Verse 2026 at CSMT and Tremor Season 9.",
-    dateOrYear: "2025–2026",
-    iconType: "leadership"
   }
 ];

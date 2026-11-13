@@ -81,7 +81,7 @@ export default function ResumeModal({
             <div className="text-xs text-gray-600 space-y-1 sm:text-right font-medium">
               <div className="flex items-center sm:justify-end gap-1.5">
                 <Mail className="w-3.5 h-3.5 text-[#1652F0]" />
-                <span>{profile.email}</span>
+                <a href={`mailto:${profile.email}`} className="hover:underline">Email via Gmail</a>
               </div>
               <div className="flex items-center sm:justify-end gap-1.5">
                 <Linkedin className="w-3.5 h-3.5 text-[#1652F0]" />
