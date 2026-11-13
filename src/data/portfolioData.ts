@@ -86,7 +86,7 @@ export const initialAcademics: AcademicItem[] = [
           "Principles of Management",
           "Foundation Course"
         ],
-        cgpa: "8.95 CGPA",
+        cgpa: "8.55 CGPA",
         grade: "Grade A"
       },
       {

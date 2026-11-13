@@ -247,7 +247,7 @@ export default function Academics({ academics }: AcademicsProps) {
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
-                  Semester 1 (8.95 CGPA)
+                  Semester 1 (8.55 CGPA · A)
                 </button>
                 <button
                   onClick={() => setSelectedSemTab('sem2')}
